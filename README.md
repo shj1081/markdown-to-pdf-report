@@ -19,7 +19,7 @@ brew install --cask basictex
 
 ## Usage
 
-1. put the markdown file in the same directory as this script
+1. put the markdown file in the same directory as this script (or modify the path in the script)
 2. run the conversion script after modify the parameters in the script
 
 ```python
