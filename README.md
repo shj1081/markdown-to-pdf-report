@@ -38,3 +38,17 @@ This can be done with `font-resizer.py` script.
 user_reduction_factor = 0.8 # modify this to the desired size factor
 original_css_file_path = './intellij-style.css'
 ```
+
+## Caution
+
+- For pandoc to work with image resize, the attached image should be like this in md file:
+
+```html
+<img src="image.png" style="width: 50px; height: 50px" />
+```
+
+- Also you can use page break in markdown file for more control over the page breaks:
+
+```html
+<div style="page-break-after: always;"></div>
+```
