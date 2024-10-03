@@ -14,7 +14,6 @@ def convert_markdown_to_pdf(md_file, css_file):
         "-o", result_file, 
         "--pdf-engine=weasyprint", 
         "--css", css_file, 
-        "-V", "papersize:a4"
     ]
     
     # Execute the command
