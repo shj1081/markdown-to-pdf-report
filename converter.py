@@ -26,7 +26,7 @@ def convert_markdown_to_pdf(md_file, css_file):
 
 
 # Execution
-md_file = "./fileName.md"
+md_file = "./README.md"
 css_file = "./paper-style.css"
 
 convert_markdown_to_pdf(md_file, css_file)

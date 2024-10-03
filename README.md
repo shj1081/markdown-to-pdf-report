@@ -32,6 +32,7 @@ css_file = "./intellij-style.css"
 
 The miscellaneous settings are in the script.
 Modify the parameters in the `css-editor.py` script.
+(TO RACHEL, Letter size is for you)
 
 ```python
 # Set the reduction factor, margin, size, and file path
