@@ -28,14 +28,16 @@ md_file = "./file-name.md" # modify this to the markdown file name
 css_file = "./intellij-style.css"
 ```
 
-## Font resizing
+## Font resizing, Margin adjustment, Page size setting
 
-The font size can be adjusted by modifying the css file.
-This can be done with `font-resizer.py` script.
+The miscellaneous settings are in the script.
+Modify the parameters in the `css-editor.py` script.
 
 ```python
-# Set the reduction factor and file path
-user_reduction_factor = 0.8 # modify this to the desired size factor
+# Set the reduction factor, margin, size, and file path
+user_reduction_factor = 1
+user_margin = 1.8  # Set your desired margin in cm
+user_page_size = "A4"  # Set your desired page size (e.g., 'A4', 'Letter', etc.)
 original_css_file_path = './intellij-style.css'
 ```
 
