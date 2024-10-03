@@ -2,6 +2,7 @@
 
 This script generates a PDF report from a markdown file.
 It uses the 'pandoc' to convert the markdown file to a PDF file.
+The intellij style css file is used to style the PDF file.
 
 ## Prerequisites
 
