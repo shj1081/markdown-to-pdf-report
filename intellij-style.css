@@ -4,6 +4,11 @@
 		format('woff');
 }
 
+@page {
+	margin: 1.8cm;
+	size: A4;
+}
+
 body {
 	background-color: white;
 	-webkit-text-size-adjust: 100%;
@@ -110,7 +115,7 @@ a:active {
 
 hr {
 	height: 0;
-	margin: 12px 0;
+	margin: 12.0px 0;
 	overflow: hidden;
 	background: transparent;
 	border: 0;
@@ -134,8 +139,8 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 12px;
-	margin-bottom: 12px;
+	margin-top: 12.0px;
+	margin-bottom: 12.0px;
 	line-height: 1.1;
 }
 
@@ -236,8 +241,8 @@ pre {
 	left: 0;
 	display: block;
 	padding-right: 4.8px;
-	padding-left: 24px;
-	margin-left: -24px;
+	padding-left: 24.0px;
+	margin-left: -24.0px;
 }
 
 .anchor:focus {
@@ -275,7 +280,7 @@ h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
 	padding-left: 6.4px;
-	margin-left: -24px;
+	margin-left: -24.0px;
 	text-decoration: none;
 }
 
@@ -398,7 +403,7 @@ dl dd {
 }
 
 blockquote {
-	padding: 0 12px;
+	padding: 0 12.0px;
 	color: #777;
 	border-left: 3.2px solid #ddd;
 }
@@ -509,7 +514,7 @@ kbd {
 	display: inline-block;
 	padding: 2.4px 2.4px;
 	font-size: 6.4px;
-	line-height: 8px;
+	line-height: 8.0px;
 	color: #555;
 	vertical-align: middle;
 	background-color: #fcfcfc;
@@ -622,7 +627,7 @@ kbd {
 	display: inline-block;
 	padding: 2.4px 2.4px;
 	font: 8.8px Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-	line-height: 8px;
+	line-height: 8.0px;
 	color: #555;
 	vertical-align: middle;
 	background-color: #fcfcfc;
@@ -661,7 +666,7 @@ span.user-del {
 	background-color: inherit;
 }
 ::-webkit-scrollbar-thumb {
-	-webkit-border-radius: 8px;
+	-webkit-border-radius: 8.0px;
 	border: 1.6px solid #f6f6f6;
 
 	background-color: #959595;
