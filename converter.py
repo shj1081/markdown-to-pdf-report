@@ -13,7 +13,7 @@ def convert_markdown_to_pdf(md_file, css_file):
         "pandoc", md_file, 
         "-o", result_file, 
         "--pdf-engine=weasyprint", 
-        "--css", css_file, 
+        "--css", css_file
     ]
     
     # Execute the command
@@ -26,7 +26,7 @@ def convert_markdown_to_pdf(md_file, css_file):
 
 
 # Execution
-md_file = "./file-name.md"
-css_file = "./intellij-style.css"
+md_file = "./fileName.md"
+css_file = "./paper-style.css"
 
 convert_markdown_to_pdf(md_file, css_file)
