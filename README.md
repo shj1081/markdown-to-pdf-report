@@ -58,4 +58,4 @@ original_css_file_path = './intellij-style.css'
 ## References
 
 - [intellij-style.css](https://gist.github.com/ivalkeen/c093e3401790a02f02e020a2884229e8)
-- [pandoc](https://pandoibc.org/)
+- [pandoc](https://pandoc.org/)
