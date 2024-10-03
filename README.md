@@ -2,7 +2,7 @@
 
 This script generates a PDF report from a markdown file.
 It uses the 'pandoc' to convert the markdown file to a PDF file.
-The intellij style css file is used to style the PDF file.
+The intellij style css file is used to style the PDF file. (some modifications are made for korean font, inline code block style, etc.)
 
 ## Prerequisites
 
@@ -52,3 +52,8 @@ original_css_file_path = './intellij-style.css'
 ```html
 <div style="page-break-after: always;"></div>
 ```
+
+## References
+
+- [intellij-style.css](https://gist.github.com/ivalkeen/c093e3401790a02f02e020a2884229e8)
+- [pandoc](https://pandoibc.org/)
