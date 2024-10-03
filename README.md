@@ -7,9 +7,13 @@ It uses the 'pandoc' to convert the markdown file to a PDF file.
 
 - pandoc
 - weasyprint
+- (maybe you need to install basictex)
 
 ```bash
 brew install pandoc, weasyprint
+
+# may need to install basictex
+brew install --cask basictex
 ```
 
 ## Usage
