@@ -14,7 +14,7 @@
 pandoc test.md -o output_file.pdf \
     --filter pandoc-crossref \
     --citeproc \
-    --bibliography=bib.bib \
+    --bibliography=bib_file.bib \
     --highlight-style=tango
 ```
 
