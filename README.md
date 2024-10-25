@@ -1,51 +1,14 @@
----
-title: Markdown Report to PDF Guide
-date: \today
-geometry: margin=1in
-papersize: a4
-fontfamily: newtxtext, newtxmath
-numbersections: true
-autoEqnLabels: true
-header-includes: |
-    \usepackage[fontsize=9pt]{scrextend}
-    \usepackage{authblk}
-    \author{Hyungjun Shon}
-    \affil{Dept. of Systems Management Engineering\\Sungkyunkwan University}
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhead[L]{Markdown to PDF report}
-    \fancyhead[C]{}
-    \fancyhead[R]{\thepage}
-    \fancyfoot{}
-    \usepackage{float}
-    \let\origfigure\figure
-    \let\endorigfigure\endfigure
-    \renewenvironment{figure}[1][2] {\expandafter\origfigure\expandafter[H]} {
-      \endorigfigure
-    }
-#   \usepackage[hangul, nonfrench, finemath]{kotex}
-abstract: |
+# Markdown to PDF Report
 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment.
----
+## Pandoc usage
 
-\tableofcontents
-
-\newpage
-
-# Pandoc usage
-
-## pre-requisite (brew)
+### pre-requisite (brew)
 
 -   pandoc
 -   pandoc-crossref
 -   mactex (if you installed basictex, you may need to remove it and install mactex)
 
-## command
+### command
 
 ```bash {.numberLines startFrom="1"}
 pandoc test.md -o output_file.pdf \
@@ -60,9 +23,9 @@ pandoc test.md -o output_file.pdf \
 -   `--bibliography=bib_file.bib` specifies the bibliography file to use for references. (only when use .bib file reference)
 -   `--highlight-style=tango` sets the syntax highlighting style for code blocks. You can choose from various styles like `pygments`, `kate`, `monochrome`, etc.
 
-# Syntax of Markdown for Better Writing
+## Syntax of Markdown for Better Writing
 
-## Definition
+### Definition
 
 Term 1
 
@@ -76,9 +39,9 @@ with lazy continuation.
     - bullet 1
     - bullet 2
 
-## Example
+### Example
 
-### examples with (@)
+#### examples with (@)
 
 (@) My first example will be numbered (1).
 (@) My second example will be numbered (2).
@@ -87,13 +50,13 @@ Some text between examples.
 
 (@) My third example will be numbered (3).
 
-### examples with (\@foo)
+#### examples with (\@foo)
 
 (@foo) My first example will be numbered (4).
 
 As you can see, in the (@foo) examples, the numbering is continuous. You can also refer to them like this: (\@foo).
 
-## list division
+### list division
 
 You can divide lists (reset ordering number and line spacing) by adding an empty line between them:
 
@@ -121,7 +84,7 @@ upper list will be rendered as:
 2.  dos
 3.  tres
 
-## Highlight
+### Highlight
 
 You can highlight text by
 
@@ -133,7 +96,7 @@ this is rendered as:
 
 [text to highlight]{.mark}
 
-## Small caps
+### Small caps
 
 You can use small caps by
 
@@ -145,7 +108,7 @@ this is rendered as:
 
 [small cap text]{.smallcaps}
 
-## Footnote
+### Footnote
 
 You can add a footnote like this:
 
@@ -167,7 +130,7 @@ Here is a footnote reference,[^1] and another.[^longnote]
 
     Subsequent paragraphs are indented to show that they belong to the previous footnote.
 
-## Code formatting
+### Code formatting
 
 You can put line number in the code:
 
@@ -205,7 +168,7 @@ compatiable color schemes are:
 -   breezedark
 -   breezelight
 
-## Image resizing
+### Image resizing
 
 ![test image](./test_image.png){width=80%}
 
@@ -217,7 +180,7 @@ You can resize the image by adding `{width=value}` after the image link. The val
 
 Here’s a detailed explanation for each component of the metadata you’ve provided for your Pandoc markdown:
 
-## reference using .bib file
+### reference using .bib file
 
 You can add references using a `.bib` file. For example, you can add a reference like this:
 
@@ -282,7 +245,7 @@ and only the references that are cited in the document will be displayed:
 :::
 ```
 
-# Metadata for Pandoc Markdown
+## Metadata for Pandoc Markdown (should be at the beginning of the markdown file)
 
 Following is the metadata used in this document and its purpose:
 
@@ -323,31 +286,31 @@ abstract: |
 ---
 ```
 
-## Title and Date
+### Title and Date
 
 -   `title: Title of the Document` sets the document's title, which will appear at the top.
 -   `date: \today` automatically inserts the current date when the document is compiled.
 
-## Page Layout and Paper Size
+### Page Layout and Paper Size
 
 -   `geometry: margin=1in` ensures that the margins are set to 1 inch all around.
 -   `papersize: a4` specifies that the document will be printed on A4-sized paper.
 
-## Font and Font Size
+### Font and Font Size
 
 -   `fontfamily: newtxtext, newtxmath` (if uncommented) would apply the NewTX font for both text and math.
 -   `fontsize: 10pt` sets the base font size to 10 points.
 
-## Section Numbering and Equation Labels
+### Section Numbering and Equation Labels
 
 -   `numbersections: true` enables automatic numbering for sections.
 -   `autoEqnLabels: true` ensures that equations are automatically labeled for easy referencing.
 
-## Font size
+### Font size
 
 -   `\usepackage[fontsize=12pt]{scrextend}` sets the font size to 12 points.
 
-## Custom Headers and Footers
+### Custom Headers and Footers
 
 -   `header-includes:` is a placeholder for any additional LaTeX packages or settings.
 -   `\usepackage{authblk}` allows for author affiliation formatting.
@@ -357,22 +320,22 @@ abstract: |
     -   The right header (`\fancyhead[R]`) shows the page number.
     -   The center of the header and the footer are left empty.
 
-## Figures and Floats
+### Figures and Floats
 
 -   `\usepackage{float}` gives you control over where floating objects, like figures, are placed.
 -   The `\renewenvironment{figure}` command forces all figures to stay exactly where they appear in the text by using the `H` placement specifier.
 
-## Language Support
+### Language Support
 
 -   The `kotex` package (if uncommented) enables support for Korean text, while also adjusting for better spacing in both languages.
 
-## Abstract
+### Abstract
 
 -   The `abstract: |` command signifies the beginning of an abstract section, which is a concise summary of the document.
 
 If you want to elaborate or tweak specific parts of the document or need additional explanation on any section, feel free to ask!
 
-## Spacing / new page
+### Spacing / new page
 
 ```markdown
 \vspace{1em}
