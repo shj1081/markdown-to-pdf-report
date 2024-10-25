@@ -25,6 +25,8 @@ pandoc test.md -o output_file.pdf \
 
 ## Syntax of Markdown for Better Writing
 
+> because of github markdown preview compatiability, please view this REAMDE.md as raw version
+
 ### Definition
 
 Term 1
