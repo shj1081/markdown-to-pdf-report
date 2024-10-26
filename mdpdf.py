@@ -7,7 +7,7 @@ you may need to change shebang path to your python path
 $ chmod +x markdown_to_pdf.py
 $ ln -s /paht/to/mdpdf.py /usr/local/bin/mdpdf
 
-than you can use this script by typing `mdpdf` in your terminal
+than you can use this script by typing `mdpdf` in your terminal in any directory
 """
 
 import subprocess
@@ -24,12 +24,14 @@ def extract_metadata_from_markdown(input_file):
 
 def create_intermediate_markdown(input_file, metadata):
     # Define default metadata
+    # TODO: Update default title to match the input file name
+    # NOTE: maybe the left header should be empty by default
     default_metadata = {
         "title": "My Document Title",
         "date": "\\today",
-        "fontsize": "12",
+        "fontsize": "10",
         "margin": "1in",
-        "left header": "left header",
+        "left header": "for rachelie",
         "author": "2020xxxxxx \\\\ Hyungjun Shon",
         "affil": "Dept. of xxxxxx\\\\Sungkyunkwan University",
         "abstract": "",
