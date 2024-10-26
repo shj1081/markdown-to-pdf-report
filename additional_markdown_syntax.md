@@ -147,7 +147,7 @@ compatiable color schemes are:
 
 ### Image resizing
 
-![test image](./test_image.png){width=80%}
+![test image](./sample_files/test_image.png){width=80%}
 
 ```markdown
 ![test image](./test_image.png){width=80%}
