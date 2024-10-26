@@ -2,26 +2,68 @@
 
 ## Pandoc usage
 
-### pre-requisite (brew)
+### pre-requisite
 
 -   pandoc
 -   pandoc-crossref
 -   mactex (if you installed basictex, you may need to remove it and install mactex)
+-   PyYAML (pip install pyyaml)
 
-### command
+### usage
 
-```bash {.numberLines startFrom="1"}
-pandoc test.md -o output_file.pdf \
-    --filter pandoc-crossref \
-    --citeproc \
-    --bibliography=bib_file.bib \
-    --highlight-style=tango
+#### 1. put metadata at the beginning of the markdown file
+
+```yaml {.numberLines startFrom="1"}
+---
+title: test title for markdown
+date: \today
+author: 2020310083 \ Hyungjun Shon
+affil: Dept. of Systems Management Engineering\\Sungkyunkwan University
+left header: test left header markdown
+fontsize: 10
+margin: 1in
+bibfile: ./bib.bib
+korean: false
+toc: true
+abstract: |
+
+    This is the test abstract of ducment. This is the test abstract of ducment.
+    This is the test abstract of ducment. This is the test abstract of ducment.
+    This is the test abstract of ducment. This is the test abstract of ducment.
+    This is the test abstract of ducment. This is the test abstract of ducment.
+    This is the test abstract of ducment. This is the test abstract of ducment.
+---
 ```
 
--   `--filter pandoc-crossref` enables cross-referencing for figures, tables, and equations.
--   `--citeproc` enables citation processing for references. (only when use .bib file reference)
--   `--bibliography=bib_file.bib` specifies the bibliography file to use for references. (only when use .bib file reference)
--   `--highlight-style=tango` sets the syntax highlighting style for code blocks. You can choose from various styles like `pygments`, `kate`, `monochrome`, etc.
+```python {.numberLines startFrom="1"}
+    default_metadata = {
+        "title": "My Document Title", # title of the document
+        "date": "\\today", # date of the document (\today for today)
+        "fontsize": "12", # font size of the document (default: 12pt)
+        "margin": "1in", # margin of the document (default: 1in)
+        "left header": "left header", # left header text
+        "author": "2020xxxxxx \\\\ Hyungjun Shon", # author of the document
+        "affil": "Dept. of xxxxxx\\\\Sungkyunkwan University", # affiliation of the author
+        "abstract": "", # abstract of the document (default: no abstract)
+        "korean": False,  # if the document is written in Korean (you need kotex when using korean)
+        "bibfile": "bib.bib",  # bib file path for references
+        "toc": True # table of contents
+    }
+```
+
+-   if you omit the field, the default value will be used.
+-   you can change the default value in `mdpdf.py`
+
+#### 2. run `mdpdf.py`
+
+```
+python3 mdpdf.py
+```
+
+-   it will ask you to input the markdown file name and output file name.
+-   you can use script as command in terminal by adding `mdpdf.py` to the `/usr/local/bin` directory.
+
+> the description is in the python file comments.
 
 ## Syntax of Markdown for Better Writing
 
@@ -246,96 +288,6 @@ and only the references that are cited in the document will be displayed:
 :::{#refs}
 :::
 ```
-
-## Metadata for Pandoc Markdown (should be at the beginning of the markdown file)
-
-Following is the metadata used in this document and its purpose:
-
-```yml {.numberLines startFrom="1"}
----
-title: Markdown Report Guide for Better Writing
-date: \today
-geometry: margin=1in
-papersize: a4
-fontfamily: newtxtext, newtxmath
-numbersections: true
-autoEqnLabels: true
-header-includes: |
-    \usepackage[fontsize=12pt]{scrextend}
-    \usepackage{authblk}
-    \author{Hyungjun Shon}
-    \affil{Dept. of Systems Management Engineering\\Sungkyunkwan University}
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhead[L]{Markdown to PDF report}
-    \fancyhead[C]{}
-    \fancyhead[R]{\thepage}
-    \fancyfoot{}
-    \usepackage{float}
-    \let\origfigure\figure
-    \let\endorigfigure\endfigure
-    \renewenvironment{figure}[1][2] {\expandafter\origfigure\expandafter[H]} {
-      \endorigfigure
-    }
-#   \usepackage[hangul, nonfrench, finemath]{kotex}
-abstract: |
-
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment. 
-    This is the test abstract of ducment. This is the test abstract of ducment.
----
-```
-
-### Title and Date
-
--   `title: Title of the Document` sets the document's title, which will appear at the top.
--   `date: \today` automatically inserts the current date when the document is compiled.
-
-### Page Layout and Paper Size
-
--   `geometry: margin=1in` ensures that the margins are set to 1 inch all around.
--   `papersize: a4` specifies that the document will be printed on A4-sized paper.
-
-### Font and Font Size
-
--   `fontfamily: newtxtext, newtxmath` (if uncommented) would apply the NewTX font for both text and math.
--   `fontsize: 10pt` sets the base font size to 10 points.
-
-### Section Numbering and Equation Labels
-
--   `numbersections: true` enables automatic numbering for sections.
--   `autoEqnLabels: true` ensures that equations are automatically labeled for easy referencing.
-
-### Font size
-
--   `\usepackage[fontsize=12pt]{scrextend}` sets the font size to 12 points.
-
-### Custom Headers and Footers
-
--   `header-includes:` is a placeholder for any additional LaTeX packages or settings.
--   `\usepackage{authblk}` allows for author affiliation formatting.
--   The combination of `\pagestyle{fancy}`, `\fancyhead`, and `\fancyfoot` enables custom headers and footers. In your example:
-
-    -   The left header (`\fancyhead[L]`) would display a course name.
-    -   The right header (`\fancyhead[R]`) shows the page number.
-    -   The center of the header and the footer are left empty.
-
-### Figures and Floats
-
--   `\usepackage{float}` gives you control over where floating objects, like figures, are placed.
--   The `\renewenvironment{figure}` command forces all figures to stay exactly where they appear in the text by using the `H` placement specifier.
-
-### Language Support
-
--   The `kotex` package (if uncommented) enables support for Korean text, while also adjusting for better spacing in both languages.
-
-### Abstract
-
--   The `abstract: |` command signifies the beginning of an abstract section, which is a concise summary of the document.
-
-If you want to elaborate or tweak specific parts of the document or need additional explanation on any section, feel free to ask!
 
 ### Spacing / new page
 
