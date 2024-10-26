@@ -34,6 +34,7 @@ abstract: |
     This is the test abstract of ducment. This is the test abstract of ducment.
 ---
 ```
+following is default value of metadata
 
 ```python {.numberLines startFrom="1"}
     default_metadata = {
