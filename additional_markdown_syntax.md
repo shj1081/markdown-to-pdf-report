@@ -29,6 +29,24 @@ with lazy continuation.
     - bullet 1
     - bullet 2
 
+# Latex Equations
+
+```latex
+$$
+\text{median} = \begin{cases}
+x_{(n+1)/2} & \text{if } n \text{ is odd} \\
+\frac{1}{2} (x_{n/2} + x_{n/2+1}) & \text{if } n \text{ is even}
+\end{cases}
+$$
+```
+
+$$
+\text{median} = \begin{cases}
+x_{(n+1)/2} & \text{if } n \text{ is odd} \\
+\frac{1}{2} (x_{n/2} + x_{n/2+1}) & \text{if } n \text{ is even}
+\end{cases}
+$$
+
 # Example
 
 ## examples with (@)
