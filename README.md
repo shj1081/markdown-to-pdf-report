@@ -64,7 +64,7 @@ default_metadata = {
 }
 ```
 
-> **Note**: To adjust these defaults, modify the values directly in `mdpdf.py`.
+> **Note**: To adjust these defaults, modify the values directly in `mdpdf.py`. You can also add more package options of pandoc in `mdpdf.py` script.
 
 ### Step 3: Run the Conversion Script
 
