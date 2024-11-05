@@ -1,8 +1,21 @@
-## Additional Syntax of Markdown for Better Writing
+---
+title: Additional Syntax of Markdown for Better Writing
+left header: Additional Syntax of Markdown for Better Writing
+fontsize: 8
+abstract: |
+
+  This is the test abstract of ducment. This is the test abstract of ducment. 
+  This is the test abstract of ducment. This is the test abstract of ducment. 
+  This is the test abstract of ducment. This is the test abstract of ducment. 
+  This is the test abstract of ducment. This is the test abstract of ducment. 
+  This is the test abstract of ducment. This is the test abstract of ducment.
+---
+
+# Note
 
 > because of github markdown preview compatiability, please view this REAMDE.md as raw version
 
-### Definition
+# Definition
 
 Term 1
 
@@ -16,9 +29,9 @@ with lazy continuation.
     - bullet 1
     - bullet 2
 
-### Example
+# Example
 
-#### examples with (@)
+## examples with (@)
 
 (@) My first example will be numbered (1).
 (@) My second example will be numbered (2).
@@ -27,13 +40,13 @@ Some text between examples.
 
 (@) My third example will be numbered (3).
 
-#### examples with (\@foo)
+## examples with (\@foo)
 
 (@foo) My first example will be numbered (4).
 
 As you can see, in the (@foo) examples, the numbering is continuous. You can also refer to them like this: (\@foo).
 
-### list division
+# list division
 
 You can divide lists (reset ordering number and line spacing) by adding an empty line between them:
 
@@ -61,7 +74,7 @@ upper list will be rendered as:
 2.  dos
 3.  tres
 
-### Highlight
+# Highlight
 
 You can highlight text by
 
@@ -73,7 +86,7 @@ this is rendered as:
 
 [text to highlight]{.mark}
 
-### Small caps
+# Small caps
 
 You can use small caps by
 
@@ -85,7 +98,7 @@ this is rendered as:
 
 [small cap text]{.smallcaps}
 
-### Footnote
+# Footnote
 
 You can add a footnote like this:
 
@@ -107,7 +120,7 @@ Here is a footnote reference,[^1] and another.[^longnote]
 
     Subsequent paragraphs are indented to show that they belong to the previous footnote.
 
-### Code formatting
+# Code formatting
 
 You can put line number in the code:
 
@@ -135,17 +148,17 @@ you can also chane the color scheme of highlighting by pandoc option:
 
 compatiable color schemes are:
 
--   pygments
--   kate
--   monochrome
--   espresso
--   zenburn
--   haddock
--   tango
--   breezedark
--   breezelight
+- pygments
+- kate
+- monochrome
+- espresso
+- zenburn
+- haddock
+- tango
+- breezedark
+- breezelight
 
-### Image resizing
+# Image resizing
 
 ![test image](./sample_files/test_image.png){width=80%}
 
@@ -157,13 +170,13 @@ You can resize the image by adding `{width=value}` after the image link. The val
 
 Here’s a detailed explanation for each component of the metadata you’ve provided for your Pandoc markdown:
 
-### reference using .bib file
+## reference using .bib file
 
 You can add references using a `.bib` file. For example, you can add a reference like this:
 
 ```markdown
--   Some senetence that use reference 1. [@knuth1997art]
--   Some senetence that use reference 2. [@website]
+- Some senetence that use reference 1. [@knuth1997art]
+- Some senetence that use reference 2. [@website]
 ```
 
 `bib_file.bib` looks like this:
@@ -211,8 +224,8 @@ You can add references using a `.bib` file. For example, you can add a reference
 
 This will be rendered as:
 
--   Some senetence that use reference 1. [@knuth1997art]
--   Some senetence that use reference 2. [@website]
+- Some senetence that use reference 1. [@knuth1997art]
+- Some senetence that use reference 2. [@website]
 
 The references will be listed at the end of the document by using the following code block,
 and only the references that are cited in the document will be displayed:
@@ -222,12 +235,17 @@ and only the references that are cited in the document will be displayed:
 :::
 ```
 
-### Spacing / new page
+# Spacing / new page
 
 ```markdown
 \vspace{1em}
 \newpage
 ```
 
--   `\vspace{1em}` adds vertical space equivalent to the height of a lowercase 'm' character.
--   `\newpage` forces a page break.
+- `\vspace{1em}` adds vertical space equivalent to the height of a lowercase 'm' character.
+- `\newpage` forces a page break.
+
+# example reference
+
+:::{#refs}
+:::

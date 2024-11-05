@@ -145,3 +145,5 @@ To enable running `mdpdf.py` from any directory, choose one of the following met
 ## Additional Markdown Syntax
 
 For further Markdown syntax options that Pandoc supports, refer to [additional_markdown_syntax.md](./additional_markdown_syntax.md). This document provides examples and guidelines for additional formatting, citations, and customization.
+
+You can also see the [additional_markdown_syntax_example_pdf](./sample_files/example_output.pdf) for preview output.
