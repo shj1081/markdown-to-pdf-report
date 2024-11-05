@@ -127,6 +127,8 @@ To enable running `mdpdf.py` from any directory, choose one of the following met
 
   #### 3. vscode keybind after system-wide access
 
+  Add this keybind to your vscode `keybindings.json` file.
+
   ```json
   // execute markdown to pdf zsh script and give parameter as editor file path
   {
