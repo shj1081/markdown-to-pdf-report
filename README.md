@@ -29,7 +29,7 @@ At the start of your Markdown file, include simplified YAML metadata as shown be
 title: 'Test Title for Markdown'
 date: \today
 author: "2020xxxxxx \\ Hyungjun Shon"
-affil: "Dept. of Systems Management Engineering\\Sungkyunkwan University"
+affil: "Dept. of Systems Management Engineering \\\\ Sungkyunkwan University"
 left header: 'Test Left Header'
 fontsize: 10
 margin: '1in'
