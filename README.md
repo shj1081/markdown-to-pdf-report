@@ -125,22 +125,22 @@ To enable running `mdpdf.py` from any directory, choose one of the following met
 
   Replace `/path/to/mdpdf.py` with the full path to the script. This link allows you to run `mdpdf` command from any directory without moving the original file.
 
-  #### 3. vscode keybind after system-wide access
+#### 3. vscode keybind after system-wide access
 
-  Add this keybind to your vscode `keybindings.json` file.
+Add this keybind to your vscode `keybindings.json` file.
 
-  ```json
-  // execute markdown to pdf zsh script and give parameter as editor file path
-  {
-    "key": "cmd+shift+m",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "mdpdf ${file}\n"
-    }
+```json
+// execute markdown to pdf zsh script and give parameter as editor file path
+{
+  "key": "cmd+shift+m",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": {
+    "text": "mdpdf ${file}\n"
   }
-  ```
+}
+```
 
-  You can set a keybind to convert currently open markdown file to pdf. This keybind will execute the `mdpdf` command with the current file path as a parameter. At least one terminal should be running in vscode. (hiding terminal pane is okay)
+You can set a keybind to convert currently open markdown file to pdf. This keybind will execute the `mdpdf` command with the current file path as a parameter. At least one terminal should be running in vscode. (hiding terminal pane is okay)
 
 ## Additional Markdown Syntax
 
