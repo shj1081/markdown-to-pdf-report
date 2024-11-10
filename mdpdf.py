@@ -69,7 +69,7 @@ header-includes: |
     \\usepackage{{fvextra}}
     \\usepackage{{xcolor}}
     \\usepackage{{tcolorbox}}
-    \\renewtcolorbox{{quote}}{{colback=color}}
+    \\renewtcolorbox{{quote}}{{colback=gray!10}}
     \\newtcolorbox{{info-box}}{{colback=cyan!5!white,arc=0pt,outer arc=0pt,colframe=cyan!60!black}}
     \\newtcolorbox{{warning-box}}{{colback=orange!5!white,arc=0pt,outer arc=0pt,colframe=orange!80!black}}
     \\newtcolorbox{{error-box}}{{colback=red!5!white,arc=0pt,outer arc=0pt,colframe=red!75!black}}
