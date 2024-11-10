@@ -6,6 +6,7 @@ To run the Markdown-to-PDF conversion script, ensure you have the following tool
 
 - **Pandoc**: Universal document converter.
 - **Pandoc-Crossref**: Enables cross-referencing within the document.
+- **Pandoc-latex-environment**: idk but needed for some reason. (info, warning block etc.)
 - **MacTeX**: Required for LaTeX support on macOS. _(Note: If you currently have BasicTeX installed, consider replacing it with MacTeX for full functionality.)_
 - **PyYAML**: For handling YAML metadata. Install via `pip install pyyaml`.
 
@@ -54,8 +55,8 @@ default_metadata = {
     "fontsize": "12pt",                    # Default font size
     "margin": "1in",                       # Default margin
     "left header": "for rachelie",         # Default left header text
-    "author": "2020xxxxxx \\\\ Hyungjun Shon",  # Default author info
-    "affil": "Dept. of xxxxxx\\\\Sungkyunkwan University",  # Default affiliation
+    "author": "2020xxxxxx \\ \\  Hyungjun Shon", # Default author name
+    "affil": "Dept. of xxxx\\\\Dept. of xxxx\\\\Sungkyunkwan University", # Default affiliation
     "abstract": "",                        # Empty abstract by default
     "korean": False,                       # Default language setting (English)
     "bibfile": "bib.bib",                  # Default bibliography file path

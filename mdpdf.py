@@ -37,8 +37,8 @@ def create_intermediate_markdown(input_file, metadata):
         "fontsize": "9",
         "margin": "1in",
         "left header": "left header",
-        "author": "2020310083 \\\\ Hyungjun Shon",
-        "affil": "Dept. of System Management Engineering\\\\Sungkyunkwan University",
+        "author": "2020xxxxxx \\ \\  Hyungjun Shon",
+        "affil": "Dept. of xxxx\\\\Dept. of xxxx\\\\Sungkyunkwan University",
         "abstract": "",
         "korean": False,
         "bibfile": "bib.bib",
@@ -58,11 +58,22 @@ papersize: a4
 fontfamily: newtxtext, newtxmath
 numbersections: true
 autoEqnLabels: true
+pandoc-latex-environment:
+    tcolorbox: [box]
+    info-box: [info]
+    warning-box: [warning]
+    error-box: [error]    
 header-includes: |
     \\usepackage[fontsize={meta['fontsize']}pt]{{scrextend}}
     \\usepackage{{authblk}}
     \\usepackage{{fvextra}}
-    \\DefineVerbatimEnvironment{{Highlighting}}{{Verbatim}}{{breaklines,commandchars=\\\\\\{{\\}}}}
+    \\usepackage{{xcolor}}
+    \\usepackage{{tcolorbox}}
+    \\renewtcolorbox{{quote}}{{colback=color}}
+    \\newtcolorbox{{info-box}}{{colback=cyan!5!white,arc=0pt,outer arc=0pt,colframe=cyan!60!black}}
+    \\newtcolorbox{{warning-box}}{{colback=orange!5!white,arc=0pt,outer arc=0pt,colframe=orange!80!black}}
+    \\newtcolorbox{{error-box}}{{colback=red!5!white,arc=0pt,outer arc=0pt,colframe=red!75!black}}
+    \\DefineVerbatimEnvironment{{Highlighting}}{{Verbatim}}{{breaklines,breakanywhere, commandchars=\\\\\\{{\\}}, frame=lines, framesep=3mm}}
     \\author{{{meta['author']}}}
     \\affil{{{meta['affil']}}}
     \\usepackage{{fancyhdr}}
@@ -105,10 +116,11 @@ def convert_markdown_to_pdf(intermediate_file, output_file, bibfile):
             "-o",
             output_file,
             "--filter",
+            "pandoc-latex-environment",
+            "--filter",
             "pandoc-crossref",
             "--citeproc",
             f"--bibliography={bibfile}",
-            "--highlight-style=tango",
         ],
         check=True,
     )
