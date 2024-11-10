@@ -253,6 +253,34 @@ and only the references that are cited in the document will be displayed:
 :::
 ```
 
+# quote blocks
+
+```
+:::info
+This is an info block
+:::
+
+:::warning
+This is a warning block
+:::
+
+:::error
+This is an error block
+:::
+```
+
+:::info
+This is an info block
+:::
+
+:::warning
+This is a warning block
+:::
+
+:::error
+This is an error block
+:::
+
 # Spacing / new page
 
 ```markdown
